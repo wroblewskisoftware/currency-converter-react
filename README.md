@@ -1,5 +1,9 @@
 # Currency-converter-react
 
+## Demo
+
+https://wroblewski82.github.io/currency-converter-react/
+
 ## Additional information
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
