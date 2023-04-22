@@ -9,15 +9,26 @@ import Options from "./Options";
 import Buttons from "./Buttons";
 import Button from "./Button";
 import Result from "./Result";
+import { useState } from "react";
 
 function App() {
+  const [amount, setAmount] = useState("");
+  const onInputChange = ({ target }) => setAmount(target.value);
+
+  const testResult = () => {
+    console.log(`Kwota: ${amount}`);
+  };
+
   return (
     <Container>
-      <Form>
+      <Form testResult={testResult}>
         <Fieldset>
           <Legend name="Kalkulator walut" />
           <Information content="Pola wymagane są oznaczone*." />
-          <Section label="Podaj kwotę w PLN*:" field={<Input />} />
+          <Section
+            label="Podaj kwotę w PLN*:"
+            field={<Input amount={amount} onInputChange={onInputChange} />}
+          />
           <Section label="Wybierz walutę:" field={<Options />} />
         </Fieldset>
         <Buttons

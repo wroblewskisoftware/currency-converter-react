@@ -1,6 +1,6 @@
 import "./style.css";
 
-const Input = () => (
+const Input = ({ amount, onInputChange }) => (
   <input
     className="form__field"
     type="number"
@@ -9,6 +9,8 @@ const Input = () => (
     name="amount"
     placeholder="Wpisz kwotę"
     required
+    value={amount}
+    onChange={onInputChange}
   />
 );
 

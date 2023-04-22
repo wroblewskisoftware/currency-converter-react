@@ -1,6 +1,7 @@
-const Form = ({ children }) => {
+const Form = ({ children, testResult }) => {
   const onFormSubmit = (event) => {
     event.preventDefault();
+    testResult();
   };
 
   return (
