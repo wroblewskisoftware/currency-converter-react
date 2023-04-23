@@ -10,6 +10,7 @@ import Buttons from "./Buttons";
 import Button from "./Button";
 import Result from "./Result";
 import { useState } from "react";
+import currences from "./currences.js";
 
 function App() {
   const [amount, setAmount] = useState("");
@@ -29,7 +30,10 @@ function App() {
             label="Podaj kwotę w PLN*:"
             field={<Input amount={amount} onInputChange={onInputChange} />}
           />
-          <Section label="Wybierz walutę:" field={<Options />} />
+          <Section
+            label="Wybierz walutę:"
+            field={<Options currences={currences} />}
+          />
         </Fieldset>
         <Buttons
           content={

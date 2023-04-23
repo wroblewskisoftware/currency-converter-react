@@ -1,11 +1,10 @@
 import "./style.css";
 
-const Options = () => (
+const Options = ({ currences }) => (
   <select className="form__field" name="currency">
-    <option value="eur">Euro</option>
-    <option value="usd">Dolar amerykański</option>
-    <option value="gbp">Funt szterling</option>
-    <option value="chf">Frank szwajcarski</option>
+    {currences.map((currency) => (
+      <option key={currency.shortName}>{currency.name}</option>
+    ))}
   </select>
 );
 
