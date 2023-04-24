@@ -13,8 +13,11 @@ import { useState } from "react";
 import currences from "./currences.js";
 
 function App() {
-  const [amount, setAmount] = useState("");
+  const [amount, setAmount] = useState();
   const onInputChange = ({ target }) => setAmount(target.value);
+
+  const [currency, setCurrency] = useState("Euro");
+  const onCurrencyChange = ({ target }) => setCurrency(target.value);
 
   const testResult = () => {
     console.log(`Kwota: ${amount}`);
@@ -32,7 +35,13 @@ function App() {
           />
           <Section
             label="Wybierz walutę:"
-            field={<Options currences={currences} />}
+            field={
+              <Options
+                currences={currences}
+                currency={currency}
+                onCurrencyChange={onCurrencyChange}
+              />
+            }
           />
         </Fieldset>
         <Buttons
