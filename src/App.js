@@ -16,11 +16,12 @@ function App() {
   const [amount, setAmount] = useState("");
   const onInputChange = ({ target }) => setAmount(target.value);
 
-  const [currency, setCurrency] = useState("Euro");
-  const onCurrencyChange = ({ target }) => setCurrency(target.value);
+  const [selectedCurrency, setSelectedCurrency] = useState("Euro");
+  const onCurrencyChange = ({ target }) => setSelectedCurrency(target.value);
 
   const testResult = () => {
     console.log(`Kwota: ${amount}`);
+    console.log(`Wybrana wluta: ${selectedCurrency}`);
   };
 
   return (
@@ -38,7 +39,7 @@ function App() {
             field={
               <Options
                 currences={currences}
-                currency={currency}
+                selectedCurrency={selectedCurrency}
                 onCurrencyChange={onCurrencyChange}
               />
             }

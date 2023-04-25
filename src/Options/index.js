@@ -1,10 +1,10 @@
 import "./style.css";
 
-const Options = ({ currences, currency, onCurrencyChange }) => (
+const Options = ({ currences, selectedCurrency, onCurrencyChange }) => (
   <select
     className="form__field"
     name="currency"
-    value={currency}
+    value={selectedCurrency}
     onChange={onCurrencyChange}
   >
     {currences.map((currency) => (
