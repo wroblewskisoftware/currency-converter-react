@@ -1,5 +1,5 @@
 import "./style.css";
 
-const Result = () => <p className="form__result">Wynik!</p>;
+const Result = ({ result }) => <p className="form__result">{result}</p>;
 
 export default Result;

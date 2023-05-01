@@ -23,13 +23,15 @@ function App() {
     ({ name }) => name === selectedCurrency
   );
 
+  const [result, setResult] = useState("");
+  const onCalculateResult = (amount, currentCurrency) =>
+    setResult(+amount / +currentCurrency.value);
+
   const testResult = () => {
-    console.log(`Kwota w PLN: ${amount} -`, typeof amount);
+    onCalculateResult(amount, currentCurrency);
+    console.log(`Kwota w PLN: ${amount}`);
     console.log(`Wybrana waluta: ${selectedCurrency}`);
-    console.log(
-      `Cena waluty: ${currentCurrency.value} -`,
-      typeof currentCurrency.value
-    );
+    console.log(`Cena waluty: ${currentCurrency.value}`);
   };
 
   return (
@@ -62,7 +64,7 @@ function App() {
           }
         />
       </Form>
-      <Result />
+      <Result result={result} />
     </Container>
   );
 }
