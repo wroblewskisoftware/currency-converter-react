@@ -19,9 +19,17 @@ function App() {
   const [selectedCurrency, setSelectedCurrency] = useState("Euro");
   const onCurrencyChange = ({ target }) => setSelectedCurrency(target.value);
 
+  const currentCurrency = currences.find(
+    ({ name }) => name === selectedCurrency
+  );
+
   const testResult = () => {
-    console.log(`Kwota: ${amount}`);
-    console.log(`Wybrana wluta: ${selectedCurrency}`);
+    console.log(`Kwota w PLN: ${amount} -`, typeof amount);
+    console.log(`Wybrana waluta: ${selectedCurrency}`);
+    console.log(
+      `Cena waluty: ${currentCurrency.value} -`,
+      typeof currentCurrency.value
+    );
   };
 
   return (
