@@ -1,7 +1,7 @@
-const Form = ({ children, testResult }) => {
+const Form = ({ children, amount, currentCurrency, onCalculateResult }) => {
   const onFormSubmit = (event) => {
     event.preventDefault();
-    testResult();
+    onCalculateResult(amount, currentCurrency);
   };
 
   return (

@@ -27,16 +27,13 @@ function App() {
   const onCalculateResult = (amount, currentCurrency) =>
     setResult(+amount / +currentCurrency.value);
 
-  const testResult = () => {
-    onCalculateResult(amount, currentCurrency);
-    console.log(`Kwota w PLN: ${amount}`);
-    console.log(`Wybrana waluta: ${selectedCurrency}`);
-    console.log(`Cena waluty: ${currentCurrency.value}`);
-  };
-
   return (
     <Container>
-      <Form testResult={testResult}>
+      <Form
+        amount={amount}
+        currentCurrency={currentCurrency}
+        onCalculateResult={onCalculateResult}
+      >
         <Fieldset>
           <Legend name="Kalkulator walut" />
           <Information content="Pola wymagane są oznaczone*." />
@@ -64,7 +61,11 @@ function App() {
           }
         />
       </Form>
-      <Result result={result} />
+      <Result
+        amount={amount}
+        result={result}
+        currentCurrency={currentCurrency}
+      />
     </Container>
   );
 }
