@@ -27,13 +27,13 @@ function App() {
   const onCalculateResult = (amount, currentCurrency) =>
     setResult(+amount / +currentCurrency.value);
 
+  const calculateResult = () => {
+    onCalculateResult(amount, currentCurrency);
+  };
+
   return (
     <Container>
-      <Form
-        amount={amount}
-        currentCurrency={currentCurrency}
-        onCalculateResult={onCalculateResult}
-      >
+      <Form calculateResult={calculateResult}>
         <Fieldset>
           <Legend name="Kalkulator walut" />
           <Information content="Pola wymagane są oznaczone*." />
