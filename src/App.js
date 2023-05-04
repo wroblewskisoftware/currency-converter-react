@@ -15,9 +15,11 @@ import currences from "./currences.js";
 function App() {
   const [amount, setAmount] = useState("");
   const onInputChange = ({ target }) => setAmount(target.value);
+  const onInputReset = () => setAmount("");
 
   const [selectedCurrency, setSelectedCurrency] = useState("Euro");
   const onCurrencyChange = ({ target }) => setSelectedCurrency(target.value);
+  const onCurrencyReset = () => setSelectedCurrency("Euro");
 
   const currentCurrency = currences.find(
     ({ name }) => name === selectedCurrency
@@ -31,9 +33,14 @@ function App() {
     onCalculateResult(amount, currentCurrency);
   };
 
+  const resetAll = () => {
+    onInputReset();
+    onCurrencyReset();
+  };
+
   return (
     <Container>
-      <Form calculateResult={calculateResult}>
+      <Form calculateResult={calculateResult} resetAll={resetAll}>
         <Fieldset>
           <Legend name="Kalkulator walut" />
           <Information content="Pola wymagane są oznaczone*." />
