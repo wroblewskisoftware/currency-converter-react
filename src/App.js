@@ -29,13 +29,19 @@ function App() {
   const onCalculateResult = (amount, currentCurrency) =>
     setResult(+amount / +currentCurrency.value);
 
+  const [toggleResultField, setToggleResultField] = useState(true);
+  const showResultField = () => setToggleResultField(false);
+  const hideResultField = () => setToggleResultField(true);
+
   const calculateResult = () => {
+    showResultField();
     onCalculateResult(amount, currentCurrency);
   };
 
   const resetAll = () => {
     onInputReset();
     onCurrencyReset();
+    hideResultField();
   };
 
   return (
@@ -69,9 +75,10 @@ function App() {
         />
       </Form>
       <Result
+        toggleResultField={toggleResultField}
         amount={amount}
-        result={result}
         currentCurrency={currentCurrency}
+        result={result}
       />
     </Container>
   );
