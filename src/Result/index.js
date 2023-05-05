@@ -1,12 +1,12 @@
 import "./style.css";
 
-const Result = ({ amount, result, currentCurrency, toggleResultField }) => {
+const Result = ({ result, toggleResultField }) => {
   if (result !== "") {
     return (
       <p className="form__result" hidden={toggleResultField}>
-        W dniu 23.04.2023r. za <strong>{amount} PLN</strong> możesz nabyć{" "}
+        W dniu 23.04.2023r. za <strong>{result.amount} PLN</strong> możesz nabyć{" "}
         <strong>
-          {result.toFixed(2)} {currentCurrency.shortName.toUpperCase()}
+          {result.result.toFixed(2)} {result.currency.toUpperCase()}
         </strong>
         .
       </p>
