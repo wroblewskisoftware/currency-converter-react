@@ -1,8 +1,34 @@
 # Currency-converter-react
 
+![Animated page image](public/currency-converter-react.gif)
+
 ## Demo
 
 https://wroblewski82.github.io/currency-converter-react/
+
+## Description
+
+Currency Converter is another project that was created for the youcode course. It was based on React.js. When writing code, I put special emphasis on the use of accepted conventions and good practices.
+
+The correctness of my work is supervised by [Krzysztof Dąbrowski](https://www.linkedin.com/in/dabrowskisoftware) - an experienced Senior Software Engineer.
+
+## Technologies
+
+- Semantic HTML
+- BEM
+- CSS
+- Flexbox
+- ES6+ features
+- React.js
+- Create react app
+- Webpack
+- Babel.js
+
+## Instruction
+
+Enter the amount you want to convert from PLN to another currency. Choose from four foreign currencies.
+Click the "Przelicz" button and you will get the results at the bottom of the application.
+If you want to clear all fields, click the "Wyczyść" button.
 
 ## Additional information
 
