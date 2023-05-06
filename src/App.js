@@ -30,7 +30,7 @@ function App() {
     setResult({
       amount,
       currency: currentCurrency.shortName,
-      result: +amount / +currentCurrency.value,
+      result: +amount / currentCurrency.value,
     });
 
   const [toggleResultField, setToggleResultField] = useState(true);
