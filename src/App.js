@@ -14,29 +14,30 @@ import currences from "./currences.js";
 
 function App() {
   const [amount, setAmount] = useState("");
-  const onInputChange = ({ target }) => setAmount(target.value);
-  const onInputReset = () => setAmount("");
-
   const [selectedCurrency, setSelectedCurrency] = useState("Euro");
-  const onCurrencyChange = ({ target }) => setSelectedCurrency(target.value);
-  const onCurrencyReset = () => setSelectedCurrency("Euro");
+  const [result, setResult] = useState("");
 
   const currentCurrency = currences.find(
     ({ name }) => name === selectedCurrency
   );
 
-  const [result, setResult] = useState("");
+  const onInputChange = ({ target }) => setAmount(target.value);
+  const onCurrencyChange = ({ target }) => setSelectedCurrency(target.value);
+
   const onCalculateResult = (amount, currentCurrency) =>
     setResult({
       amount,
       currency: currentCurrency.shortName,
       result: +amount / currentCurrency.value,
     });
-  const onResultReset = () => setResult("");
 
   const calculateResult = () => {
     onCalculateResult(amount, currentCurrency);
   };
+
+  const onInputReset = () => setAmount("");
+  const onCurrencyReset = () => setSelectedCurrency("Euro");
+  const onResultReset = () => setResult("");
 
   const resetAll = () => {
     onInputReset();
