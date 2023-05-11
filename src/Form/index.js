@@ -10,7 +10,7 @@ const Form = ({ children, calculateResult, resetAll }) => {
   };
 
   return (
-    <form className="form__form" onSubmit={onFormSubmit} onReset={onFormReset}>
+    <form className="form" onSubmit={onFormSubmit} onReset={onFormReset}>
       {children}
     </form>
   );

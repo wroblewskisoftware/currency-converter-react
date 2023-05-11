@@ -2,7 +2,7 @@ import "./style.css";
 
 const Input = ({ amount, onInputChange }) => (
   <input
-    className="form__field"
+    className="section__field"
     type="number"
     min="0.01"
     step="0.01"
