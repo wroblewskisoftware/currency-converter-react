@@ -14,7 +14,7 @@ import currencies from "./currencies.js";
 
 function App() {
   const [amount, setAmount] = useState("");
-  const [selectedCurrency, setSelectedCurrency] = useState("Euro");
+  const [selectedCurrency, setSelectedCurrency] = useState(currencies[0].name);
   const [result, setResult] = useState("");
 
   const currentCurrency = currencies.find(
@@ -36,7 +36,7 @@ function App() {
   };
 
   const onInputReset = () => setAmount("");
-  const onCurrencyReset = () => setSelectedCurrency("Euro");
+  const onCurrencyReset = () => setSelectedCurrency(currencies[0].name);
   const onResultReset = () => setResult("");
 
   const resetAll = () => {
