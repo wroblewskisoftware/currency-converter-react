@@ -1,13 +1,13 @@
 import "./style.css";
 
-const Options = ({ currences, selectedCurrency, onCurrencyChange }) => (
+const Options = ({ currencies, selectedCurrency, onCurrencyChange }) => (
   <select
     className="options"
     name="currency"
     value={selectedCurrency}
     onChange={onCurrencyChange}
   >
-    {currences.map((currency) => (
+    {currencies.map((currency) => (
       <option key={currency.shortName}>{currency.name}</option>
     ))}
   </select>

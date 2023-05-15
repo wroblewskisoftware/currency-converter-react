@@ -1,4 +1,4 @@
-const currences = [
+const currencies = [
   {
     name: "Euro",
     shortName: "EUR",
@@ -21,4 +21,4 @@ const currences = [
   },
 ];
 
-export default currences;
+export default currencies;

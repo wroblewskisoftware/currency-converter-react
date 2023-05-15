@@ -10,14 +10,14 @@ import Buttons from "./Buttons";
 import Button from "./Button";
 import Result from "./Result";
 import { useState } from "react";
-import currences from "./currences.js";
+import currencies from "./currencies.js";
 
 function App() {
   const [amount, setAmount] = useState("");
   const [selectedCurrency, setSelectedCurrency] = useState("Euro");
   const [result, setResult] = useState("");
 
-  const currentCurrency = currences.find(
+  const currentCurrency = currencies.find(
     ({ name }) => name === selectedCurrency
   );
 
@@ -59,7 +59,7 @@ function App() {
             label="Wybierz walutę:"
             field={
               <Options
-                currences={currences}
+                currencies={currencies}
                 selectedCurrency={selectedCurrency}
                 onCurrencyChange={onCurrencyChange}
               />
