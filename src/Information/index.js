@@ -1,7 +1,7 @@
 import "./style.css";
 
 const Information = ({ content }) => (
-  <p className="form__information">
+  <p className="information">
     <b>{content}</b>
   </p>
 );

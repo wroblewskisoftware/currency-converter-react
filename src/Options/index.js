@@ -2,7 +2,7 @@ import "./style.css";
 
 const Options = ({ currences, selectedCurrency, onCurrencyChange }) => (
   <select
-    className="section__field"
+    className="options"
     name="currency"
     value={selectedCurrency}
     onChange={onCurrencyChange}
