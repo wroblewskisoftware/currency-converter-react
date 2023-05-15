@@ -1,6 +1,6 @@
 # Currency-converter-react
 
-![Animated page image](public/currency-converter-react.gif)
+![Animated page image](currency-converter-react.gif)
 
 ## Demo
 
