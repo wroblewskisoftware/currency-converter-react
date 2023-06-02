@@ -3,6 +3,7 @@ import Form from "./Form";
 import Fieldset from "./Fieldset";
 import Legend from "./Legend";
 import Information from "./Information";
+import DateField from "./DateField";
 import Section from "./Section";
 import Input from "./Input";
 import Options from "./Options";
@@ -50,6 +51,7 @@ function App() {
       <Form calculateResult={calculateResult} resetAll={resetAll}>
         <Fieldset>
           <Legend name="Kalkulator walut" />
+          <DateField />
           <Information content="Pola wymagane są oznaczone*." />
           <Section
             label="Podaj kwotę w PLN*:"
