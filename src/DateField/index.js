@@ -1,27 +1,8 @@
 import "./style.css";
-import { useEffect, useState } from "react";
+import { useCurrentDate } from "../useCurrentDate";
 
 const DateField = () => {
-  const [date, setDate] = useState(new Date());
-
-  const day = date.toLocaleDateString(undefined, {
-    weekday: "long",
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
-
-  const time = date.toLocaleTimeString(undefined);
-
-  useEffect(() => {
-    const intervalId = setInterval(() => {
-      setDate(new Date());
-    }, 1000);
-
-    return () => {
-      clearInterval(intervalId);
-    };
-  }, []);
+  const [day, time] = useCurrentDate();
 
   return (
     <p className="dateField">
