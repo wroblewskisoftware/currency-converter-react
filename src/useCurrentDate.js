@@ -22,5 +22,5 @@ export const useCurrentDate = () => {
     };
   }, []);
 
-  return [day, time];
+  return { day, time };
 };
