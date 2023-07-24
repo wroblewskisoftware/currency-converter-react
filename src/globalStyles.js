@@ -1,7 +1,10 @@
 import { createGlobalStyle } from "styled-components";
+import { normalize } from "styled-normalize";
 import background from "./background.jpg";
 
 const GlobalStyle = createGlobalStyle`
+${normalize}
+
 html {
   box-sizing: border-box;
   height: 100%;
