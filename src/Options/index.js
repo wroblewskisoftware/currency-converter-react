@@ -1,8 +1,8 @@
-import "./style.css";
+import { StyledInput } from "../Input/styled";
 
 const Options = ({ currencies, selectedCurrency, onCurrencyChange }) => (
-  <select
-    className="options"
+  <StyledInput
+    as="select"
     name="currency"
     value={selectedCurrency}
     onChange={onCurrencyChange}
@@ -10,7 +10,7 @@ const Options = ({ currencies, selectedCurrency, onCurrencyChange }) => (
     {currencies.map((currency) => (
       <option key={currency.shortName}>{currency.name}</option>
     ))}
-  </select>
+  </StyledInput>
 );
 
 export default Options;

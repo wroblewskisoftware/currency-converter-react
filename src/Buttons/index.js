@@ -1,5 +1,5 @@
-import "./style.css";
+import { StyledButtons } from "./styled";
 
-const Buttons = ({ content }) => <p className="buttons">{content}</p>;
+const Buttons = ({ content }) => <StyledButtons>{content}</StyledButtons>;
 
 export default Buttons;

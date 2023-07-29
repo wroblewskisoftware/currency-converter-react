@@ -1,9 +1,7 @@
-import "./style.css";
+import { StyledButton } from "./styled";
 
 const Button = ({ name, type }) => (
-  <button className="button" type={type}>
-    {name}
-  </button>
+  <StyledButton type={type}>{name}</StyledButton>
 );
 
 export default Button;

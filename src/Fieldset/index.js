@@ -1,7 +1,5 @@
-import "./style.css";
+import { StyledFieldset } from "./styled";
 
-const Fieldset = ({ children }) => (
-  <fieldset className="fieldset">{children}</fieldset>
-);
+const Fieldset = ({ children }) => <StyledFieldset>{children}</StyledFieldset>;
 
 export default Fieldset;

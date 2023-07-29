@@ -1,9 +1,9 @@
-import "./style.css";
+import { StyledSection } from "./styled";
 
 const Section = ({ label, field }) => (
   <p>
     <label>
-      <span className="section">{label}</span>
+      <StyledSection>{label}</StyledSection>
       {field}
     </label>
   </p>

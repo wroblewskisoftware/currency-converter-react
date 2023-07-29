@@ -1,9 +1,9 @@
-import "./style.css";
+import { StyledInformation } from "./styled";
 
 const Information = ({ content }) => (
-  <p className="information">
+  <StyledInformation>
     <b>{content}</b>
-  </p>
+  </StyledInformation>
 );
 
 export default Information;

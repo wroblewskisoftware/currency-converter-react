@@ -1,14 +1,14 @@
-import "./style.css";
+import { StyledResult } from "./styled";
 
 const Result = ({ result }) => (
-  <p className="result">
+  <StyledResult>
     W dniu 23.04.2023r. za <strong>{result.amount}&nbsp;PLN</strong> możesz
     nabyć{" "}
     <strong>
       {result.result.toFixed(2)}&nbsp;{result.currency}
     </strong>
     .
-  </p>
+  </StyledResult>
 );
 
 export default Result;

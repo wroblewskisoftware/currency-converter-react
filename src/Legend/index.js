@@ -1,5 +1,5 @@
-import "./style.css";
+import { StyledLegend } from "./styled";
 
-const Legend = ({ name }) => <legend className="legend">{name}</legend>;
+const Legend = ({ name }) => <StyledLegend>{name}</StyledLegend>;
 
 export default Legend;
