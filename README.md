@@ -21,6 +21,7 @@ The correctness of my work is supervised by [Krzysztof Dąbrowski](https://www.l
 - ES6+ features
 - React.js
 - Create react app
+- Styled Components
 - Webpack
 - Babel.js
 
