@@ -1,5 +1,4 @@
 import GlobalStyle from "./globalStyles";
-import Container from "./Container";
 import Form from "./Form";
 import Fieldset from "./Fieldset";
 import Legend from "./Legend";
@@ -50,38 +49,36 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <Container>
-        <Form calculateResult={calculateResult} resetAll={resetAll}>
-          <Fieldset>
-            <Legend name="Kalkulator walut" />
-            <DateField />
-            <Information content="Pola wymagane są oznaczone*." />
-            <Section
-              label="Podaj kwotę w PLN*:"
-              field={<Input amount={amount} onInputChange={onInputChange} />}
-            />
-            <Section
-              label="Wybierz walutę:"
-              field={
-                <Options
-                  currencies={currencies}
-                  selectedCurrency={selectedCurrency}
-                  onCurrencyChange={onCurrencyChange}
-                />
-              }
-            />
-          </Fieldset>
-          <Buttons
-            content={
-              <>
-                <Button name="Przelicz" />
-                <Button name="Wyczyść" type="reset" />
-              </>
+      <Form calculateResult={calculateResult} resetAll={resetAll}>
+        <Fieldset>
+          <Legend name="Kalkulator walut" />
+          <DateField />
+          <Information content="Pola wymagane są oznaczone*." />
+          <Section
+            label="Podaj kwotę w PLN*:"
+            field={<Input amount={amount} onInputChange={onInputChange} />}
+          />
+          <Section
+            label="Wybierz walutę:"
+            field={
+              <Options
+                currencies={currencies}
+                selectedCurrency={selectedCurrency}
+                onCurrencyChange={onCurrencyChange}
+              />
             }
           />
-        </Form>
-        {result ? <Result result={result} /> : null}
-      </Container>
+        </Fieldset>
+        <Buttons
+          content={
+            <>
+              <Button name="Przelicz" />
+              <Button name="Wyczyść" type="reset" />
+            </>
+          }
+        />
+      </Form>
+      {result ? <Result result={result} /> : null}
     </>
   );
 }
