@@ -6,7 +6,8 @@ export const useDownloadRates = () => {
     (async () => {
       try {
         const response = await axios.get("data.json");
-        console.log(response.data);
+        const dataObject = response.data;
+        console.log(dataObject);
       } catch (error) {
         const isError = true;
         console.log(isError);
