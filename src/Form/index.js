@@ -1,8 +1,4 @@
-import { useDownloadRates } from "../useDownloadRates";
-
 const Form = ({ children, calculateResult, resetAll }) => {
-  useDownloadRates();
-
   const onFormSubmit = (event) => {
     event.preventDefault();
     calculateResult();
