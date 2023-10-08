@@ -4,6 +4,8 @@ import { Fieldset } from "./Fieldset/styled";
 import Legend from "./Legend";
 import Information from "./Information";
 import DateField from "./DateField";
+import Loading from "./Loading";
+import Error from "./Error";
 import Section from "./Section";
 import Input from "./Input";
 import Options from "./Options";
@@ -12,11 +14,15 @@ import Button from "./Button";
 import Result from "./Result";
 import { useState } from "react";
 import currencies from "./currencies.js";
+import { useDownloadRates } from "./useDownloadRates";
 
 function App() {
   const [amount, setAmount] = useState("");
   const [selectedCurrency, setSelectedCurrency] = useState(currencies[0].name);
   const [result, setResult] = useState("");
+
+  const ratesData = useDownloadRates();
+  console.log(ratesData);
 
   const currentCurrency = currencies.find(
     ({ name }) => name === selectedCurrency
@@ -52,30 +58,38 @@ function App() {
         <Fieldset>
           <Legend name="Kalkulator walut" />
           <DateField />
-          <Information content="Pola wymagane są oznaczone*." />
-          <Section
-            label="Podaj kwotę w PLN*:"
-            field={<Input amount={amount} onInputChange={onInputChange} />}
-          />
-          <Section
-            label="Wybierz walutę:"
-            field={
-              <Options
-                currencies={currencies}
-                selectedCurrency={selectedCurrency}
-                onCurrencyChange={onCurrencyChange}
+          {ratesData === undefined ? <Loading /> : null}
+          {ratesData.error ? <Error /> : null}
+          {ratesData.success ? (
+            <>
+              <Information content="Pola wymagane są oznaczone*." />
+              <Section
+                label="Podaj kwotę w PLN*:"
+                field={<Input amount={amount} onInputChange={onInputChange} />}
               />
+              <Section
+                label="Wybierz walutę:"
+                field={
+                  <Options
+                    currencies={currencies}
+                    selectedCurrency={selectedCurrency}
+                    onCurrencyChange={onCurrencyChange}
+                  />
+                }
+              />
+            </>
+          ) : null}
+        </Fieldset>
+        {ratesData.success ? (
+          <Buttons
+            content={
+              <>
+                <Button name="Przelicz" />
+                <Button name="Wyczyść" type="reset" />
+              </>
             }
           />
-        </Fieldset>
-        <Buttons
-          content={
-            <>
-              <Button name="Przelicz" />
-              <Button name="Wyczyść" type="reset" />
-            </>
-          }
-        />
+        ) : null}
       </Form>
       {result ? <Result result={result} /> : null}
     </Container>
