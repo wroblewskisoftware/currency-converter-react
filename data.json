@@ -1,0 +1,15 @@
+{
+    "motd": {
+        "msg": "If you or your company use this project or like what we doing, please consider backing us so we can continue maintaining and evolving this project.",
+        "url": "https://exchangerate.host/#/donate"
+    },
+    "success": true,
+    "base": "PLN",
+    "date": "2023-08-27",
+    "rates": {
+        "CHF": 0.213946,
+        "EUR": 0.223978,
+        "GBP": 0.1922,
+        "USD": 0.241656
+    }
+}
