@@ -9,11 +9,9 @@ export const useDownloadRates = () => {
       (async () => {
         try {
           const response = await axios.get("data.json");
-          const saveData = () => setRatesData(response.data);
-          saveData();
+          setRatesData(response.data);
         } catch (error) {
-          const saveError = () => setRatesData({ error: true });
-          saveError();
+          setRatesData({ error: true });
         }
       })();
     }, 1000);
