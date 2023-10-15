@@ -59,8 +59,8 @@ function App() {
           <Legend name="Kalkulator walut" />
           <DateField />
           {ratesData === undefined ? <Loading /> : null}
-          {ratesData.error ? <Error /> : null}
-          {ratesData.success ? (
+          {ratesData?.error ? <Error /> : null}
+          {ratesData?.success ? (
             <>
               <Information content="Pola wymagane są oznaczone*." />
               <Section
@@ -80,7 +80,7 @@ function App() {
             </>
           ) : null}
         </Fieldset>
-        {ratesData.success ? (
+        {ratesData?.success ? (
           <Buttons
             content={
               <>
