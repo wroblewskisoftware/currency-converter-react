@@ -71,7 +71,7 @@ function App() {
                 label="Wybierz walutę:"
                 field={
                   <Options
-                    currencies={currencies}
+                    ratesData={ratesData}
                     selectedCurrency={selectedCurrency}
                     onCurrencyChange={onCurrencyChange}
                   />
