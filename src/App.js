@@ -22,7 +22,6 @@ function App() {
   const [result, setResult] = useState("");
 
   const ratesData = useDownloadRates();
-  console.log(ratesData);
 
   const currentCurrency = currencies.find(
     ({ name }) => name === selectedCurrency
