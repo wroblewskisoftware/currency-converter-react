@@ -18,7 +18,7 @@ import { useDownloadRates } from "./useDownloadRates";
 
 function App() {
   const [amount, setAmount] = useState("");
-  const [selectedCurrency, setSelectedCurrency] = useState(currencies[0].name);
+  const [selectedCurrency, setSelectedCurrency] = useState("EUR");
   const [result, setResult] = useState("");
 
   const ratesData = useDownloadRates();
@@ -43,7 +43,7 @@ function App() {
   };
 
   const onInputReset = () => setAmount("");
-  const onCurrencyReset = () => setSelectedCurrency(currencies[0].name);
+  const onCurrencyReset = () => setSelectedCurrency("EUR");
   const onResultReset = () => setResult("");
 
   const resetAll = () => {
