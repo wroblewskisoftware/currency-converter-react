@@ -13,32 +13,26 @@ import Buttons from "./Buttons";
 import Button from "./Button";
 import Result from "./Result";
 import { useState } from "react";
-import currencies from "./currencies.js";
 import { useDownloadRates } from "./useDownloadRates";
 
 function App() {
   const [amount, setAmount] = useState("");
   const [selectedCurrency, setSelectedCurrency] = useState("EUR");
   const [result, setResult] = useState("");
-
   const ratesData = useDownloadRates();
-
-  const currentCurrency = currencies.find(
-    ({ name }) => name === selectedCurrency
-  );
 
   const onInputChange = ({ target }) => setAmount(target.value);
   const onCurrencyChange = ({ target }) => setSelectedCurrency(target.value);
 
-  const onCalculateResult = (amount, currentCurrency) =>
+  const onCalculateResult = (amount, selectedCurrency, ratesData) =>
     setResult({
       amount,
-      currency: currentCurrency.shortName,
-      result: +amount / currentCurrency.value,
+      selectedCurrency,
+      result: +amount / ratesData.rates[selectedCurrency],
     });
 
   const calculateResult = () => {
-    onCalculateResult(amount, currentCurrency);
+    onCalculateResult(amount, selectedCurrency, ratesData);
   };
 
   const onInputReset = () => setAmount("");
