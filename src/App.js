@@ -29,7 +29,7 @@ function App() {
       date: ratesData.date,
       amount,
       selectedCurrency,
-      result: +amount / ratesData.rates[selectedCurrency],
+      result: +amount * ratesData.rates[selectedCurrency],
     });
 
   const calculateResult = () => {
