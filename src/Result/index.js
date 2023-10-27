@@ -7,6 +7,7 @@ const Result = ({ result }) => (
     <strong>
       {result.result.toFixed(2)}&nbsp;{result.selectedCurrency}
     </strong>
+    .
   </StyledResult>
 );
 
