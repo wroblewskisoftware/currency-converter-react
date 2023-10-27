@@ -26,6 +26,7 @@ function App() {
 
   const onCalculateResult = (amount, selectedCurrency, ratesData) =>
     setResult({
+      date: ratesData.date,
       amount,
       selectedCurrency,
       result: +amount / ratesData.rates[selectedCurrency],
