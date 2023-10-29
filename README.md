@@ -25,7 +25,7 @@ The correctness of my work is supervised by [Krzysztof Dąbrowski](https://www.l
 - Styled Components
 - Webpack
 - Babel.js
-- Api
+- API
 - Async / Await
 - Axios
 
