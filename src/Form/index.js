@@ -12,37 +12,43 @@ import Button from "../Button";
 import { useState } from "react";
 import { useDownloadRates } from "../useDownloadRates";
 
-const Form = () => {
+const Form = ({ getResult }) => {
   const [amount, setAmount] = useState("");
   const [selectedCurrency, setSelectedCurrency] = useState("EUR");
-  const [result, setResult] = useState("");
+  const [calculatedResult, setCalculatedResult] = useState("");
   const ratesData = useDownloadRates();
 
   const onInputChange = ({ target }) => setAmount(target.value);
   const onCurrencyChange = ({ target }) => setSelectedCurrency(target.value);
 
   const calculateResult = (amount, selectedCurrency, ratesData) =>
-    setResult({
+    setCalculatedResult({
       amount,
       selectedCurrency,
       result: +amount * ratesData.data[selectedCurrency].value,
       ratesData,
     });
 
+  const inputReset = () => setAmount("");
+  const currencyReset = () => setSelectedCurrency("EUR");
+  const resetResult = () => setCalculatedResult("");
+
+  const submitResult = (calculatedResult) => {
+    getResult(calculatedResult);
+  };
+
   const onFormSubmit = (event) => {
     event.preventDefault();
     calculateResult(amount, selectedCurrency, ratesData);
+    submitResult(calculatedResult);
   };
-
-  const inputReset = () => setAmount("");
-  const currencyReset = () => setSelectedCurrency("EUR");
-  const resetResult = () => setResult("");
 
   const onFormReset = (event) => {
     event.preventDefault();
     inputReset();
     currencyReset();
     resetResult();
+    submitResult(calculatedResult);
   };
 
   return (
