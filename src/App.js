@@ -20,23 +20,20 @@ function App() {
   const [selectedCurrency, setSelectedCurrency] = useState("EUR");
   const [result, setResult] = useState("");
   const ratesData = useDownloadRates();
-  const date = new Date(ratesData?.meta.last_updated_at).toLocaleDateString(
-    "pl-PL"
-  );
 
   const onInputChange = ({ target }) => setAmount(target.value);
   const onCurrencyChange = ({ target }) => setSelectedCurrency(target.value);
 
-  const onCalculateResult = (date, amount, selectedCurrency, ratesData) =>
+  const onCalculateResult = (amount, selectedCurrency, ratesData) =>
     setResult({
-      date,
       amount,
       selectedCurrency,
       result: +amount * ratesData.data[selectedCurrency].value,
+      ratesData,
     });
 
   const calculateResult = () => {
-    onCalculateResult(date, amount, selectedCurrency, ratesData);
+    onCalculateResult(amount, selectedCurrency, ratesData);
   };
 
   const onInputReset = () => setAmount("");
