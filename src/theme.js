@@ -8,4 +8,7 @@ export const theme = {
     navyBlue: "#000599",
     blue: "#333aff",
   },
+  breakpoint: {
+    mobileMax: 767,
+  },
 };
