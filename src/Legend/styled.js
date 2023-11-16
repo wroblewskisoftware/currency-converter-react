@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const StyledLegend = styled.legend`
+export const Legend = styled.legend`
   padding: 10px 25px;
   border: 2px solid ${({ theme }) => theme.color.black};
   border-radius: 5px;

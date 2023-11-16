@@ -1,14 +1,14 @@
 import { Fieldset } from "../Fieldset/styled";
-import Legend from "../Legend";
-import Information from "../Information";
+import { Legend } from "../Legend/styled";
 import DateField from "../DateField";
+import { Information } from "../Information/styled";
 import Loading from "../Loading";
 import Error from "../Error";
 import Section from "../Section";
 import Input from "../Input";
 import Options from "../Options";
-import Buttons from "../Buttons";
-import Button from "../Button";
+import { Buttons } from "../Buttons/styled";
+import { Button } from "../Button/styled";
 import { useState } from "react";
 import { useDownloadRates } from "../useDownloadRates";
 
@@ -47,13 +47,15 @@ const Form = ({ setResult }) => {
   return (
     <form onSubmit={onFormSubmit} onReset={onFormReset}>
       <Fieldset>
-        <Legend name="Kalkulator walut" />
+        <Legend>Kalkulator walut</Legend>
         <DateField />
         {ratesData.status === "loading" ? <Loading /> : null}
         {ratesData.status === "error" ? <Error /> : null}
         {ratesData.status === "success" ? (
           <>
-            <Information content="Pola wymagane są oznaczone*." />
+            <Information>
+              <b>Pola wymagane są oznaczone*</b>
+            </Information>
             <Section
               label="Podaj kwotę w PLN*:"
               field={<Input amount={amount} onInputChange={onInputChange} />}
@@ -72,14 +74,10 @@ const Form = ({ setResult }) => {
         ) : null}
       </Fieldset>
       {ratesData.status === "success" ? (
-        <Buttons
-          content={
-            <>
-              <Button name="Przelicz" />
-              <Button name="Wyczyść" type="reset" />
-            </>
-          }
-        />
+        <Buttons>
+          <Button>Przelicz</Button>
+          <Button type="reset">Wyczyść</Button>
+        </Buttons>
       ) : null}
     </form>
   );

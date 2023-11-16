@@ -1,5 +1,5 @@
 import styled from "styled-components";
 
-export const StyledInformation = styled.p`
+export const Information = styled.p`
   margin: 0;
 `;
