@@ -1,4 +1,4 @@
-import { StyledInput } from "../Container/Form/Section/Input/styled";
+import { StyledInput } from "../Input/styled";
 
 const Options = ({ ratesData, selectedCurrency, onCurrencyChange }) => {
   const currenciesArray = Object.keys(ratesData.data);
