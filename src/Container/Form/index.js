@@ -1,16 +1,16 @@
-import { Fieldset } from "../Fieldset/styled";
-import { Legend } from "../Legend/styled";
-import DateField from "../DateField";
-import { Information } from "../Information/styled";
-import Loading from "../Loading";
-import Error from "../Error";
-import Section from "../Section";
-import Input from "../Input";
-import Options from "../Options";
-import { Buttons } from "../Buttons/styled";
-import { Button } from "../Button/styled";
+import { Fieldset } from "./styled";
+import { Legend } from "./styled";
+import DateField from "./DateField";
+import { Information } from "./styled";
+import Loading from "./Loading";
+import Error from "./Error";
+import Section from "./Section";
+import Input from "./Section/Input";
+import Options from "../../Options";
+import { Buttons } from "./styled";
+import { Button } from "./styled";
 import { useState } from "react";
-import { useDownloadRates } from "../useDownloadRates";
+import { useDownloadRates } from "../../useDownloadRates";
 
 const Form = ({ setResult }) => {
   const [amount, setAmount] = useState("");

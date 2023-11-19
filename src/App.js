@@ -1,6 +1,6 @@
 import { Container } from "./Container/styled";
-import Form from "./Form";
-import Result from "./Result";
+import Form from "./Container/Form";
+import Result from "./Container/Result";
 import { useState } from "react";
 
 function App() {
