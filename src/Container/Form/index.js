@@ -53,9 +53,7 @@ const Form = ({ setResult }) => {
         {ratesData.status === "error" ? <Error /> : null}
         {ratesData.status === "success" ? (
           <>
-            <Information>
-              <b>Pola wymagane są oznaczone*</b>
-            </Information>
+            <Information>Pola wymagane są oznaczone*</Information>
             <Section
               label="Podaj kwotę w PLN*:"
               field={<Input amount={amount} onInputChange={onInputChange} />}

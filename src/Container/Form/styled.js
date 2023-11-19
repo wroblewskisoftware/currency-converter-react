@@ -24,6 +24,7 @@ export const Legend = styled.legend`
 
 export const Information = styled.p`
   margin: 0;
+  font-weight: bold;
 `;
 
 export const Buttons = styled.p`
