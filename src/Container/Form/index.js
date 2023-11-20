@@ -1,14 +1,10 @@
-import { Fieldset } from "./styled";
-import { Legend } from "./styled";
+import { Fieldset, Legend, Information, Buttons, Button } from "./styled";
 import DateField from "./DateField";
-import { Information } from "./styled";
 import Loading from "./Loading";
 import Error from "./Error";
 import Section from "./Section";
 import Input from "./Section/Input";
 import Options from "./Section/Options";
-import { Buttons } from "./styled";
-import { Button } from "./styled";
 import { useState } from "react";
 import { useDownloadRates } from "../../useDownloadRates";
 
