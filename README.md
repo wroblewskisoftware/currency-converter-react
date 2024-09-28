@@ -4,7 +4,7 @@
 
 ## Demo
 
-https://wroblewski82.github.io/currency-converter-react/
+https://wroblewskisoftware.github.io/currency-converter-react/
 
 ## Description
 
